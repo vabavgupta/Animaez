@@ -106,7 +106,7 @@ loginForm.addEventListener('submit' , (e)=> {
 
   auth.signInWithEmailAndPassword(email,password).then(cred => {
 
-    // console.log(cred.user);
+     console.log(cred.user);
 
     // reseeting the value
     const modal =document.querySelector('#modal-login');
@@ -115,6 +115,8 @@ loginForm.addEventListener('submit' , (e)=> {
 
 
 
-  });
-
+  }).catch(err => {
+    // console.log(err.message);
+    alert('wrong user name or password');
+  })
 });
